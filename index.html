@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Coding Gift</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        font-family: "Segoe UI", sans-serif;
+        overflow: hidden;
+        color: rgb(105, 72, 72);
+      }
+
+      .falling {
+        position: fixed;
+        top: -50px;
+        font-size: 30px;
+        color: red;
+        animation: fall 6s linear infinite;
+        pointer-events: none;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(110vh);
+          opacity: 0;
+        }
+      }
+
+      .card {
+        padding: 30px;
+        text-align: center;
+        max-width: 400px;
+        margin: 100px auto;
+        position: relative;
+        z-index: 10;
+      }
+
+      .heart {
+        font-size: 50px;
+        color: red;
+        animation: beat 1s infinite alternate;
+      }
+
+      @keyframes beat {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      .btns {
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        font-size: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 10px;
+        transition: all 0.3s ease;
+        /* margin-left: -10px; */
+      }
+
+      .yes {
+        background-color: #28a745;
+        color: white;
+        margin-left: -50px;
+      }
+
+      .no {
+        background-color: #dc3545;
+        color: white;
+        position: absolute;
+      }
+
+      .message {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #ffc;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Falling hearts only -->
+    <script>
+      for (let i = 0; i < 35; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("falling");
+        heart.textContent = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+        heart.style.fontSize = 20 + Math.random() * 20 + "px";
+        document.body.appendChild(heart);
+      }
+    </script>
+
+    <!-- Gift Card -->
+    <div class="card">
+      <div class="heart">❤️</div>
+      <h2>
+        One request for you my brother and request is that you will do
+        everything whatever I want to say you
+      </h2>
+      <p>
+        So click on yes button and take a risk if you not want to click on yes
+        button Just click on the no button😂
+      </p>
+      <p>So best of luck for no button</p>
+      <p>😂👍</p>
+
+      <div class="btns">
+        <button class="yes" onclick="sayYes()">YES</button>
+        <button class="no" id="noBtn">NO</button>
+      </div>
+
+      <div class="message" id="message">
+        Thanks for saying yes now you will buy ice cream to night for me 💝🥰
+      </div>
+    </div>
+
+    <script>
+      const noBtn = document.getElementById("noBtn");
+
+      noBtn.addEventListener("mouseover", () => {
+        const x = Math.floor(Math.random() * 300);
+        const y = Math.floor(Math.random() * 300);
+        noBtn.style.top = y + "px";
+        noBtn.style.left = x + "px";
+      });
+
+      function sayYes() {
+        document.getElementById("message").style.display = "block";
+        noBtn.style.display = "none"; // hide NO button
+      }
+    </script>
+  </body>
+</html>
