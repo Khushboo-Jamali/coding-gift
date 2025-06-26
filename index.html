@@ -37,6 +37,8 @@
         margin: 100px auto;
         position: relative;
         z-index: 10;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
       }
 
       .heart {
@@ -66,7 +68,6 @@
         cursor: pointer;
         margin: 10px;
         transition: all 0.3s ease;
-        /* margin-left: -10px; */
       }
 
       .yes {
@@ -86,6 +87,32 @@
         font-size: 1.2rem;
         color: #ffc;
         display: none;
+      }
+
+      /* 🔽 Mobile Friendly Styles */
+      @media (max-width: 500px) {
+        .card {
+          margin: 50px 20px;
+          padding: 20px;
+          max-width: 90%;
+        }
+
+        .heart {
+          font-size: 40px;
+        }
+
+        h2 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        button {
+          font-size: 0.9rem;
+          padding: 8px 16px;
+        }
       }
     </style>
   </head>
@@ -123,7 +150,7 @@
       </div>
 
       <div class="message" id="message">
-        Thanks for saying yes now you will buy ice cream to night for me 💝🥰
+        Thanks for saying yes now you will buy ice cream tonight for me 💝🥰
       </div>
     </div>
 
